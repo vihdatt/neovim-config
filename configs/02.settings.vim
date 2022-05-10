@@ -1,30 +1,35 @@
-set mouse=a 				" Enable mouse
-set tabstop=4 				" 
-set shiftwidth=4 			" 
+set encoding=utf-8
+set number relativenumber
+syntax enable
+set noswapfile
+set scrolloff=7
+set backspace=indent,eol,start
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set fileformat=unix
+
+set mouse=a                 " Enbale mouse
 set listchars=tab:\¦\ 		" Tab charactor 
 set list
-set foldmethod=indent 		" 
-set foldlevelstart=99 		"  
-set number 					" Show line number
-set ignorecase 				" Enable case-sensitive 
+set ignorecase
 set hlsearch
 set incsearch
-set termguicolors
 
-" Disable backup
-set nowrap
-set nobackup
-set nowb
-set noswapfile
-
-syntax on
+"Enable termguicolors
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " Enable copying from vim to clipboard
 if has('win32')
 	set clipboard=unnamed  
 else
 	set clipboard=unnamedplus
-endif
+endif 
 
 " Auto reload content changed outside
 au CursorHold,CursorHoldI * checktime
